@@ -1,0 +1,85 @@
+{% from "bootstrap5/form.html" import render_form %}
+
+<!-- Page Header -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css')}}"
+    />
+
+</head>
+<body>
+
+
+
+<section class="forms-section">
+    <h1 class="section-title">Integrity Nexus</h1>
+    <div class="forms">
+      <div class="form-wrapper is-active">
+        <button type="button" class="switcher switcher-login">
+          Login
+          <span class="underline"></span>
+        </button>
+     <form class="form form-signup", novalidate=" True">
+       <fieldset>
+           <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+            <div class="input-block">
+                <label for="signup-email">E-mail</label>
+                {{form.email}}
+            </div>
+            <div class="input-block">
+              <label for="login-password">Password</label>
+                {{form.password}}
+            </div>
+       </fieldset>
+            {{form.submit}}
+
+    </form>
+      </div>
+      <div class="form-wrapper">
+        <button type="button" class="switcher switcher-signup">
+          Sign Up
+          <span class="underline"></span>
+        </button>
+        <form class="form form-signup">
+          <fieldset>
+            <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+            <div class="input-block">
+              <label for="signup-email">E-mail</label>
+                {{form1.email}}
+            </div>
+            <div class="input-block">
+              <label for="name">Name</label>
+                {{form1.name}}
+            </div>
+            <div class="input-block">
+              <label for="signup-password">Password</label>
+                {{form1.password}}
+            </div>
+            <div class="input-block">
+              <label for="signup-password-confirm">Confirm password</label>
+                {{form1.confirm_password}}
+            </div>
+          </fieldset>
+            {{form1.submit1}}
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const switchers = [...document.querySelectorAll('.switcher')]
+
+    switchers.forEach(item => {
+        item.addEventListener('click', function() {
+            switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+            this.parentElement.classList.add('is-active')
+        })
+    })
+  </script>
+
+
+

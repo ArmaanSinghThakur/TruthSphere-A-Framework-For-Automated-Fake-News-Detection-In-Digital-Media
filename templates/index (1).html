@@ -1,0 +1,67 @@
+{% from 'bootstrap4/form.html' import render_form %}
+{% extends "base.html" %}
+{% block content %}
+
+    <section class="hero">
+        <h1>Welcome to Integrity Nexus</h1>
+        <p>Your trusted source for digital integrity.</p>
+        <button>Learn More</button>
+    </section>
+
+    <main>
+        <section id="home">
+            <h2>About Us</h2>
+            <p>Integrity_Nexus is at the forefront of digital integrity, providing cutting-edge tools to detect fake news, AI-generated videos, and photos. Our mission is to empower users with the ability to distinguish between authentic and fabricated content in a rapidly evolving digital landscape.</p>
+            <p>Leveraging advanced AI technology, we analyze media for signs of manipulation, helping individuals, businesses, and organizations maintain trust in the information they consume and share.</p>
+        </section>
+        <section id="news">
+            <h2>Detect Fake News Through Url</h2>
+            <form novalidate="True">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter the URL of the news article you want to verify:</label>
+
+              </div>
+                {{render_form(form, novalidate=True, enctype="multipart/form-data")}}
+            </form>
+            <p id="newsResult">{{result}}</p>
+        </section>
+        <section id="videos">
+            <h2>Detect Fake News Through Text</h2>
+            <form novalidate="True">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter the Headline of the news article you want to verify:</label>
+
+              </div>
+                {{render_form(form_1, novalidate=True, enctype="multipart/form-data")}}
+            </form>
+            <div class="modal" tabindex="-1">
+            <p id="newsResult">{{result}}</p>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <form>
+                <div> 
+                    <label for="name">Name:</label>
+                </div>
+                <div> 
+                    <input type="text" class="input-box" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                </div>
+                <div>
+                    <input type="email" class="input-box" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                 </div>
+                <div>
+                    <textarea id="message" name="message" required></textarea> 
+                 </div>
+                 <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+{% endblock %}
+
