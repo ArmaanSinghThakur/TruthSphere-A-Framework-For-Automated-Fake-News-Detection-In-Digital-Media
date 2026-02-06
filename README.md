@@ -3,8 +3,8 @@
 This project is a real-time Fake News Detection web application that identifies whether news content is real or fake using machine learning models trained on real-world datasets. The system uses natural language processing techniques and multiple classification algorithms to provide accurate predictions through a web-based interface.
 
 ## Team Members
-Armaan Singh — Project Lead and Backend Development  
-Akanksha Kriti — Machine Learning Contributor and Model Analysis  
+Armaan Singh - Project Lead and Backend Development  
+Akanksha Kriti - Machine Learning Contributor and Model Analysis  
 
 ## Project Overview
 The system uses natural language processing and machine learning algorithms to classify news as real or fake. It is trained on real-world datasets and provides accurate predictions for real-time news verification through a web-based platform.
